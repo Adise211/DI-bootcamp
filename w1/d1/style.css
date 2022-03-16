@@ -1,0 +1,89 @@
+* {
+	box-sizing: border-box;
+}
+
+nav {
+	border: 3px black solid;
+	background-color: black;
+    color: white;
+    border-bottom: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-size: 20px;
+
+
+}
+
+.start {
+	position: relative;
+	left: 300px;
+	top: -5px;
+	cursor: pointer;
+}
+
+.signin {
+	position: relative;
+	right: -1100px;
+	top: -43px;
+	top: -55px;
+	border: 3px solid;
+    background-color: lightseagreen;
+    display: inline;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.text > p {
+	position: relative;
+	top: 70px;
+	right: 100px;
+}
+.text {
+	font-size: 40px;
+	text-align: center;
+	position: relative;
+    top: 70px;
+    background-image: url("https://images.pexels.com/photos/235990/pexels-photo-235990.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    padding: 100px;
+    margin-top: -80px;
+    background-position: center;
+    background-size: cover;
+    color: lavenderblush;
+    height: 700px;
+    width: 1500px;
+    
+
+}
+
+.signup {
+	font-size: 30px;
+	cursor: pointer;
+}
+
+label {
+	position: relative;
+	left: 280px;
+	top: 90px;
+	cursor: pointer;
+}
+
+input {
+	position: relative;
+	right: 190px;
+	border: 2px black solid;
+    padding: 7px 150px 7px 7px;
+    border-radius: 7px;
+    background-color: lightcyan;
+    top: 90px;
+}
+.support {
+	font-size: 30px;
+	position: relative;
+	top: 120px;
+	text-align: center;
+}
+.each {
+	display: inline;
+	margin-left: 20px;
+ 	}
