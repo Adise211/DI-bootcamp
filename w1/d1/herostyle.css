@@ -1,0 +1,88 @@
+body {
+	background-image: url("https://images.theconversation.com/files/171397/original/file-20170530-25201-15jfkqt.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=900.0&fit=crop");
+ 	background-repeat: no-repeat;
+ 	background-size: cover;
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+ul li {
+	list-style: none;
+	display: inline-block;
+}
+
+nav {
+	word-spacing: 120px;
+	text-align: center;
+	font-size: 30px;
+	font-style: italic;
+	background-color: #AA3939;
+	color: white;
+	border: 2px #AA3939 solid;
+	cursor: pointer;
+	position: sticky;
+	top: 30px;
+}
+
+li:hover {
+	color: blue;
+}
+
+h1 {
+	font-size: 50px;
+	margin-top: 150px;
+}
+
+.home > p {
+	font-family: 'Raleway', sans-serif;
+	font-size: 30px;
+	border: 2px white solid;
+	padding: 15px 0px;
+	background-color: white;
+	opacity: 0.75;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+.stories {
+	position: relative;
+	top: 100px;
+	border: 2px lightcoral dotted;
+	background-color: lightcoral;
+    opacity: 0.75;
+}
+
+.stories > p {
+	font-size: 20px;
+	font-family: 'Roboto Slab', serif;
+}
+
+.powers {
+	position: relative;
+	top: 120px;
+	margin-bottom: 250px;
+	margin-top: 120px;
+	border: 2px white #4F618F;
+	padding: 10px 0px;
+	background-color: #4F618F;
+	opacity: 0.75;
+	color: white;
+	
+}
+
+.powers > p {
+	font-size: 20px;
+	font-family: 'Roboto Slab', serif;
+}
+
+a {
+	text-decoration: none;
+	font-size: 30px;
+	color: red;
+	display: block;
+}
