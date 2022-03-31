@@ -1,0 +1,31 @@
+body {
+	background-color: lightyellow;
+}
+
+#instruction > *:not(h1,button){
+	text-align: center;
+	font-size: 30px;
+
+}
+
+h1 {
+	font-size: 40px;
+	text-align: center;
+}
+
+button {
+ 	text-align: center;
+	padding: 15px;
+	font-size: 20px;
+	background-color: yellow;
+	border-radius: 20px;
+	box-shadow: 10px 10px;
+}
+
+button:hover {
+	padding: 20px;
+	font-size: 25px;
+	border: 1px black solid;
+}
+
+
