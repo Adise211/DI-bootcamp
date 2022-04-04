@@ -27,6 +27,7 @@ button {
 	background-color: yellow;
 	border-radius: 20px;
 	box-shadow: 10px 10px;
+	cursor: pointer;
 }
 
 button:hover {
@@ -53,7 +54,7 @@ button:hover {
 
 
 
- .des {
+ .decription > * {
  	
  	border: 2px black dotted;
  	font-size: 20px;
@@ -69,7 +70,7 @@ button:hover {
 }
 
 
-.shape0 {    /* Squere */
+.shapeSquere {    /* Squere */
 	width: 150px;
   	height: 150px;
   	background: red;
@@ -78,27 +79,27 @@ button:hover {
   	left: 800px;
 }
 
-.shape1 {   /* Rectangle */
+.shapeRectangle {   /* Rectangle */
 	width: 200px;
    	height: 100px;
    	background: lightgreen;
    	position: relative;
-   	bottom: 800px;
+   	bottom: 770px;
    	left: 600px;
 }
 
-.shape2 {     /* Circle */
+.shapeCircle {     /* Circle */
 	width: 150px;
   	height: 150px;
   	background: yellow;
    	border-radius: 50%;
    	position: relative;
-   	bottom: 900px;
-   	left: 1000px;
+   	bottom: 800px;
+   	left: 1050px;
 
 }
 
-.shape3 {    /* Triangle */
+.shapeTriangle {    /* Triangle */
 	width: 0;
     height: 0;
     border-left: 60px solid transparent;
@@ -110,7 +111,7 @@ button:hover {
 }
 
 /* Star */
-.shape4 { 
+.shapeStar { 
 	margin: 50px 0;
     position: relative;
     bottom: 800px;
@@ -126,7 +127,7 @@ button:hover {
 
 }
 
-.shape4::before {
+.shapeStar::before {
 	border-bottom: 80px solid pink;
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
@@ -140,7 +141,7 @@ button:hover {
 	transform: rotate(-35deg);
 }
 
-.shape4::after {
+.shapeStar::after {
 	position: absolute;
     display: block;
     color: pink;
@@ -155,48 +156,10 @@ button:hover {
     content: '';
 }
 
-
-
-/* Octagon 
-
-.shape5 { 
-  
-    width: 100px;
-    height: 100px;
-    background: red;
-    position: relative;
-}
-
-.shape5:before {
-    content: "";
-    width: 100px;
-    height: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-bottom: 29px solid red;
-    border-left: 29px solid #eee;
-    border-right: 29px solid #eee;
-}
-    
-.shape5:after {
-    content: "";
-    width: 100px;
-    height: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    border-top: 29px solid red;
-    border-left: 29px solid #eee;
-    border-right: 29px solid #eee;
-}
-
-*/
-
 	
 
 
-.shape6 {   /* Line */
+.shapeLine {   /* Line */
 	width: 200px;
    	height: 20px;
    	background: #1C6F58;
@@ -207,7 +170,7 @@ button:hover {
 }
 
   /* Heart */
-.shape7 {
+.shapeHeart {
     position: relative;
     bottom: 800px;
     left: 570px;
@@ -215,8 +178,8 @@ button:hover {
     height: 90px;
 }
 
-.shape7:before,
-.shape7:after {
+.shapeHeart:before,
+.shapeHeart:after {
     position: absolute;
     content: "";
     left: 50px;
@@ -228,11 +191,25 @@ button:hover {
     transform: rotate(-45deg);
     transform-origin: 0 100%;
     }
-.shape7:after {
+.shapeHeart:after {
     left: 0;
     transform: rotate(45deg);
     transform-origin: 100% 100%;
 }
+
+
+.banner {
+	border: 2px black solid;
+	background-color: #A52A33;
+}
+
+
+
+
+
+
+
+
 
     
 

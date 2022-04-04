@@ -4,7 +4,7 @@ console.log("hello");
 function pressToStart(){
 	let theButton = document.getElementsByClassName("startbutton")[0];
 	let theTitle = document.getElementById("instruction");
- 	
+
 	theButton.addEventListener("click", function() {
 		theTitle.style.display = "none";
 		countDownToStart();
@@ -24,7 +24,7 @@ function countDownToStart () {
 	count.appendChild(newDiv);
 	newDiv.classList.add("countdown");
 
-	let counter = 5;
+	let counter = 1;
 	let id = setInterval(function () {
 		console.log(counter);
 		newDiv.textContent = counter
@@ -42,59 +42,99 @@ function countDownToStart () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // Part 3 : the game will be displayed once the counter ends
 
-// 3.1 create new divs inside the text section 
-// 3.2 insert some tex to any div (the descrption of the forms)
-// 3.3 make any describe-div draggable : 
+// 3.1 create new divs inside the text section
+// 3.2 insert some text to any div (the descrption of the forms)
+// 3.3 make any describe-div draggable :
 let theDes = [
 "Thanks to him we are able to ride on the bicycle",
 "If you look at the sky after midnight you might see him and lots of him",
-"He is the simbol of love", 
+"He is the simbol of love",
 "Some kids like to drew him as a roof",
 "He is very simple",
-"He is the perfect shape in geometry", 
+"He is the perfect shape in geometry",
 "You could see him as the borad in classes",
 "His name will remind you the animal octopus"
-] 
+]
+
+let indexShape = ["Squere","Rectangle","Circle","Triangle","Star","Line","Heart"];           // I will was that also at step number 4
+let indexTxt = ["Circle","Star","Heart","Triangle","Line","Squere","Rectangle"];
+let colors = ["yellow","pink","#B26BBC","blue","#1C6F58","red","lightgreen"];
 
 function createTheText () {
-	for (let i = 0; i < 8; i ++) {
+	for (let i = 0; i < indexTxt.length; i ++) {
 		let aside = document.getElementsByClassName("decription")[0];
-	 	let addDivs = document.createElement("div"); 
+	 	let addDivs = document.createElement("div");
+
 	 	addDivs.textContent = theDes[i]
-	 	addDivs.setAttribute("draggable","true")
 	 	addDivs.classList.add("des")
 	 	aside.appendChild(addDivs);
-	 	addDivs.addEventListener("drag", function(e) {
-	 		e.target.style.visibility = "hidden"
-	 	})
-	 		addDivs.addEventListener("dragend", function(e) {
-	 		e.target.style.visibility = "visible"
-	 	})
+	 	addDivs.dataset.shape = indexTxt[i];
 
-	
-	}
+		addDivs.setAttribute('draggable',true);
+		addDivs.setAttribute('id',indexTxt[i]);
+
+		addDivs.addEventListener("dragstart",function(event){
+			event.dataTransfer.setData("text/plain", event.target.id); // "draggable-element"
+			// define allowed effects
+			event.dataTransfer.effectsAllowed = "move";
+			// change cursor style
+			event.target.style.cursor = "move";
+		})
+
+
+ 	}
+
 }
-
-
 
 // Part 4: the shapes that will be displayed
 
- let theShapes = ["n"];
-
-
-
 function createShapes () {
-	for (let s = 0; s < 8; s ++) {
+	for (let s = 0; s < indexShape.length; s ++) {
 		let forms = document.getElementById("forms");
 		console.log(forms)
-	 	let addNewDivs = document.createElement("div"); 
-	 	addNewDivs.classList.add(`shape`+ `${s}`)
+	 	let addNewDivs = document.createElement("div");
+	 	addNewDivs.classList.add(`shape`+ `${indexShape[s]}`);
 	 	forms.appendChild(addNewDivs);
-	 	addNewDivs.setAttribute("draggable","true")
+	 	// addNewDivs.setAttribute("draggable","true");
+		addNewDivs.dataset.shape = indexShape[s];
+
+
+		addNewDivs.addEventListener("dragover",function(event) {
+			event.preventDefault();
+	    event.dataTransfer.dropEffect = "move";
+		})
+		addNewDivs.addEventListener("drop",function(event) {
+			event.preventDefault();
+
+	    // Extract id of element and get it's reference
+	    var id = event.dataTransfer.getData("text/plain");
+	    var div = document.getElementById(id);
+
+	    if (event.target.dataset.shape === div.dataset.shape) {
+				event.target.textContent = 'OK';
+	    }
+			else {
+				alert('Not OK');
+			}
+		})
 	}
 }
+
+// console.log(e.dataTransfer.getData("text/plain", e.target.id));
 
 
 
