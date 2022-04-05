@@ -42,9 +42,31 @@ function countDownToStart () {
 
 
 
+// "Game over" banner
+
+function sayGameOver () {
+	let getTo = document.getElementById("player");
+	let divOne = document.createElement("div");
+	getTo.appendChild(divOne);
+	divOne.classList.add("itsover");
+	let txtIn = document.createTextNode("Game Over");
+	divOne.appendChild(txtIn);
+	console.log(divOne);
+
+}
 
 
 
+// "Bravo!" banner if the user won
+
+function sayBravo () {
+	let getTo2 = document.getElementById("player");
+	let divTwo = document.createElement("div");
+	getTo2.appendChild(divTwo);
+	divTwo.classList.add("winner");
+	let say = document.createTextNode("Bravo !");
+	divTwo.appendChild(say);
+}
 
 
 
@@ -72,7 +94,7 @@ let theDes = [
 
 let indexShape = ["Squere","Rectangle","Circle","Triangle","Star","Line","Heart"];           // I will was that also at step number 4
 let indexTxt = ["Circle","Star","Heart","Triangle","Line","Squere","Rectangle"];
-let colors = ["yellow","pink","#B26BBC","blue","#1C6F58","red","lightgreen"];
+
 
 function createTheText () {
 	for (let i = 0; i < indexTxt.length; i ++) {
@@ -84,21 +106,64 @@ function createTheText () {
 	 	aside.appendChild(addDivs);
 	 	addDivs.dataset.shape = indexTxt[i];
 
-		addDivs.setAttribute('draggable',true);
 		addDivs.setAttribute('id',indexTxt[i]);
 
-		addDivs.addEventListener("dragstart",function(event){
-			event.dataTransfer.setData("text/plain", event.target.id); // "draggable-element"
-			// define allowed effects
-			event.dataTransfer.effectsAllowed = "move";
-			// change cursor style
-			event.target.style.cursor = "move";
+		addDivs.addEventListener("dragover",function(event) {
+			event.preventDefault();
+	    	event.dataTransfer.dropEffect = "move";
+		})
+
+		addDivs.addEventListener("drop",function(event) {
+			event.preventDefault();
+
+	    // Extract id of element and get it's reference
+	    let idShape = event.dataTransfer.getData("text/plain");
+	    let div = document.getElementById(idShape); 
+	    
+	    if (event.target.dataset.shape === div.dataset.shape) {
+				event.target.textContent = 'OK';
+				event.target.style.border = "2px black solid";
+				event.target.style.backgroundColor = "gold";
+				for (let counter = 0;counter < 8; counter++) {
+					if (counter === 7 ) {
+				 	sayBravo();                          // If everything is corecct - the "Barvo" banner will show up
+				 	let getToForms2 = document.getElementById("forms");
+				 	let getToDec2 = document.getElementsByClassName("decription")[0];
+				 	console.log(getToDec2);
+				 	getToForms2.style.visibility = "hidden"
+				 	getToDec2.style.visibility = "hidden"
+				
+				 	}	
+				}
+				    
+			
+
+			} else {
+	 
+				sayGameOver();   // If one match was incorecct - the banner "Game Over" will be display 
+				let getToForms = document.getElementById("forms");
+				let getToDec = document.getElementsByClassName("decription")[0];
+				console.log(getToDec);
+				getToForms.style.visibility = "hidden"
+				getToDec.style.visibility = "hidden"
+				
+				
+				
+
+			}
+		
+
+
 		})
 
 
  	}
+ 	
 
 }
+
+
+
 
 // Part 4: the shapes that will be displayed
 
@@ -108,33 +173,32 @@ function createShapes () {
 		console.log(forms)
 	 	let addNewDivs = document.createElement("div");
 	 	addNewDivs.classList.add(`shape`+ `${indexShape[s]}`);
+	 	addNewDivs.setAttribute('id',indexShape[s]);
 	 	forms.appendChild(addNewDivs);
-	 	// addNewDivs.setAttribute("draggable","true");
+	 	addNewDivs.setAttribute("draggable",true);
 		addNewDivs.dataset.shape = indexShape[s];
 
 
-		addNewDivs.addEventListener("dragover",function(event) {
-			event.preventDefault();
-	    event.dataTransfer.dropEffect = "move";
-		})
-		addNewDivs.addEventListener("drop",function(event) {
-			event.preventDefault();
+		addNewDivs.addEventListener("dragstart",function(event){
+			event.dataTransfer.setData("text/plain", event.target.id); // "draggable-element"
+			// define allowed effects
+			event.dataTransfer.effectsAllowed = "move";
+			// change cursor style
+			event.target.style.cursor = "move";
 
-	    // Extract id of element and get it's reference
-	    var id = event.dataTransfer.getData("text/plain");
-	    var div = document.getElementById(id);
-
-	    if (event.target.dataset.shape === div.dataset.shape) {
-				event.target.textContent = 'OK';
-	    }
-			else {
-				alert('Not OK');
-			}
 		})
+
+
+		addNewDivs.addEventListener("dragend",function(event) {
+			event.target.style.visibility = "hidden";
+		})
+
+
+	
 	}
 }
 
-// console.log(e.dataTransfer.getData("text/plain", e.target.id));
+
 
 
 
