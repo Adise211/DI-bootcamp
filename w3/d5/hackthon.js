@@ -24,7 +24,7 @@ function countDownToStart () {
 	count.appendChild(newDiv);
 	newDiv.classList.add("countdown");
 
-	let counter = 1;
+	let counter = 5;
 	let id = setInterval(function () {
 		console.log(counter);
 		newDiv.textContent = counter
@@ -124,17 +124,17 @@ function createTheText () {
 				event.target.textContent = 'OK';
 				event.target.style.border = "2px black solid";
 				event.target.style.backgroundColor = "gold";
-				for (let counter = 0;counter < 8; counter++) {
-					if (counter === 7 ) {
+				//for (let counter = 0;counter < 8; counter++) {
+					//if (counter === 7 ) {
 				 	sayBravo();                          // If everything is corecct - the "Barvo" banner will show up
-				 	let getToForms2 = document.getElementById("forms");
-				 	let getToDec2 = document.getElementsByClassName("decription")[0];
-				 	console.log(getToDec2);
-				 	getToForms2.style.visibility = "hidden"
-				 	getToDec2.style.visibility = "hidden"
+				 	// let getToForms2 = document.getElementById("forms");
+				 	// let getToDec2 = document.getElementsByClassName("decription")[0];
+				 	// console.log(getToDec2);
+				 	// getToForms2.style.visibility = "hidden"
+				 	// getToDec2.style.visibility = "hidden"
 				
-				 	}	
-				}
+				 	//}	
+				//}
 				    
 			
 
