@@ -1,0 +1,48 @@
+
+* {
+	box-sizing: bo;
+}
+
+body {
+
+	background-image: url('https://wallpapercave.com/wp/4DuYKpW.jpg'); 
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
+
+#box, button {
+	font-size: 15px;
+}
+
+#box {
+	color: white;
+	border: 2px orange solid;
+	padding: 20px;
+	width: 50vw;
+	text-align: center;
+	position: relative;
+	top: 15px;
+	left: 400px;
+	
+}
+button {
+	background-color: yellow;
+	border: 2px gold solid;
+	color: black;
+	padding: 10px;
+	border-radius: 50px;
+	position: relative;
+	left: 700px;
+	top: 30px;
+}
+
+/*
+#boxafter {
+	border: 2px orange solid;
+	padding: 20px;
+	width: 50vw;
+	position: relative;
+	top: 15px;
+	left: 400px;
+} */
