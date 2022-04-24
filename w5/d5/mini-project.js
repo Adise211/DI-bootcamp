@@ -10,7 +10,13 @@ theButton.addEventListener("click", findSomeone)
 async function findSomeone () {
 
 	try {
-	
+		
+		const getDiv = document.getElementById('box');
+	  	while (getDiv.firstChild) {
+			getDiv.firstChild.remove()
+ 	 	}
+		
+		  	
 		let number = Math.floor(Math.random() * 85);
 		let char = await fetch(`https://www.swapi.tech/api/people/${number}`)
 
@@ -18,7 +24,7 @@ async function findSomeone () {
 			throw new Error ('Something went wrong')
 			
 		} else {
-			
+		
 			const data = await char.json();
 			
 			
