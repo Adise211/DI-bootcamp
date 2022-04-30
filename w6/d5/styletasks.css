@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-image: url('https://cdn.pixabay.com/photo/2015/05/31/14/23/organizer-791939_1280.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.each {
+    display: inline-block;
+    border: 2px black solid;
+    padding: 20px;
+    margin: 20px;
+    
+    
+}
+.descrip {
+    margin: 20px;
+    padding: 30px;
+    
+}
+
+.deletetask {
+    position: relative;
+    bottom: 150px;
+    left: 50px;
+    
+
+}
+.deletetask:hover {
+    background-color: red;
+    border: 1px black solid;
+}
+
+.edittask {
+    border: 2px black solid;
+    background-color: rgb(49, 66, 219);
+    color: white;
+}
+
+.yes, .no {
+    border: 2px black solid;
+    margin: 7px;
+    background-color: cadetblue;
+    color: white;
+    padding: 10px;
+}
+
+
+div {
+    background-color: bisque;
+}
