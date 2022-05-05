@@ -1,0 +1,12 @@
+h1 {
+    border: 2px blue dotted;
+    padding: 15px;
+    background-color: pink;
+    width: 40%;
+    text-align: center;
+}
+
+h3 {
+    color: lightseagreen;
+    font-size: 30px;
+}
