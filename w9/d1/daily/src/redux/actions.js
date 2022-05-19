@@ -2,7 +2,7 @@
 
 export const selectedMovie = (movie_index) => {
   return {
-    type:'SELECTE_MOVIE',
+    type:'SELECTED_MOVIE',
     payload: movie_index
   }
 }
